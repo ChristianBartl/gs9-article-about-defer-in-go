@@ -1,0 +1,1 @@
+# gs9-article-about-defer-in-go
