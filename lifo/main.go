@@ -12,15 +12,25 @@ func main() {
 }
 
 func executeNormalRace(h Racehorses) {
-	fmt.Println("################ Start a new horse race. ################")
+	fmt.Println("Start a normal horse race: 🏇🏇🏇🏇")
 	for i, horse := range h {
-		fmt.Printf("%v: %v \n", i, horse)
+		if i == 0 {
+			fmt.Printf("%v: %v 🥇\n", i+1, horse)
+
+		} else {
+			fmt.Printf("%v: %v \n", i+1, horse)
+		}
 	}
 }
 
 func executeRaceWithDefer(r Racehorses) {
-	fmt.Println("################ Start a new horse race. ################")
+	fmt.Println("Start a horse race including defer: 🏇🏇🏇🏇")
 	for i, horse := range r {
-		defer fmt.Printf("%v: %v \n", i, horse)
+		if i == 0 {
+			defer fmt.Printf("%v: %v 🥇\n", i+1, horse)
+
+		} else {
+			defer fmt.Printf("%v: %v \n", i+1, horse)
+		}
 	}
 }
