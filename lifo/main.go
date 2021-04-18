@@ -11,26 +11,28 @@ func main() {
 
 }
 
-func executeNormalRace(h Racehorses) {
+func executeNormalRace(rh Racehorses) {
 	fmt.Println("Start a normal horse race: 🏇🏇🏇🏇")
-	for i, horse := range h {
+	var resultTemplate string
+	for i, horse := range rh {
 		if i == 0 {
-			fmt.Printf("%v: %v 🥇\n", i+1, horse)
-
+			resultTemplate = "%v: %v 🥇\n"
 		} else {
-			fmt.Printf("%v: %v \n", i+1, horse)
+			resultTemplate = "%v: %v \n"
 		}
+		fmt.Printf(resultTemplate, i+1, horse)
 	}
 }
 
-func executeRaceWithDefer(r Racehorses) {
+func executeRaceWithDefer(rh Racehorses) {
 	fmt.Println("Start a horse race including defer: 🏇🏇🏇🏇")
-	for i, horse := range r {
+	var resultTemplate string
+	for i, horse := range rh {
 		if i == 0 {
-			defer fmt.Printf("%v: %v 🥇\n", i+1, horse)
-
+			resultTemplate = "%v: %v 🥇\n"
 		} else {
-			defer fmt.Printf("%v: %v \n", i+1, horse)
+			resultTemplate = "%v: %v \n"
 		}
+		defer fmt.Printf(resultTemplate, i+1, horse)
 	}
 }
